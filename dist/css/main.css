@@ -150,6 +150,9 @@ table {
 
 /* 1. Main Layout ================================= */
 
-
+.tooltip{
+	color: blue;
+	cursor: pointer;
+}
 
 /* 2. Content ================================= */
