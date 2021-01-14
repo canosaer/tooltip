@@ -1,14 +1,13 @@
 /* 
 ==============================================
-CONTENT:	Project Name Here
-AUTHOR:		Your Name Here
+CONTENT:	Best City
+AUTHOR:		Eric Canosa
 ==============================================
 
 TABLE OF CONTENTS:
 
 0. Reset
-1. Main Layout
-2. Content
+1. STYLES
 
 ==============================================
 */
@@ -148,11 +147,209 @@ table {
 	border-spacing: 0;
 }
 
-/* 1. Main Layout ================================= */
+/* 1. STYLES ================================= */
+
+*{
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+body{
+	font-family: 'Varela Round', sans-serif;
+}
 
 .tooltip{
 	color: blue;
 	cursor: pointer;
 }
 
-/* 2. Content ================================= */
+
+
+
+header{
+	display:flex;
+	flex-direction:column;
+	text-align:center;
+	line-height:2;
+}
+
+.hero img{
+	width: 190px;
+}
+
+.hero{
+	text-align:center;
+}
+
+h1{
+	margin: 2% 0% 2.25%;
+}
+
+h1 a{
+	color: #093a58;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+nav li{
+	margin-bottom: 3%;
+}
+
+nav a{
+	color: #3acec2;
+	font-size: 1.375rem;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.hero{
+	background-color: #3acec2;
+	padding: 10% 0%;
+	color: white;
+	font-weight: bold;
+	margin-bottom: 10%;
+}
+
+.hero h2{
+	font-size: 3rem;
+	margin: 5% 0% 3%;
+}
+
+.hero p{
+	font-size: 1.5rem;
+}
+
+.col{
+	display: flex;
+	flex-direction: column;
+	background: #edf4f7;
+	border-radius: 5px;
+	margin: 1%;
+}
+
+.col h3{
+	color: #093a58;
+	font-size: 2.25rem;
+	font-weight:bold;
+	padding: 4% 4% 6% 4%;
+}
+
+.col p{
+	font-size: 1.375rem;
+	color: #3a3a3a;
+	line-height: 1.5;
+	padding: 0% 4% 2% 4%;
+}
+
+.col p+p{
+	margin-top: 1%;
+}
+
+.col a{
+	background-color: #3acec2;
+	padding: 4%;
+	color:white;
+	font-weight:bold;
+	border-radius: 10%;
+	margin: 0% 0% 2% 4%;
+	align-self: flex-start;
+}
+
+.col span{
+	font-weight:bold;
+}
+
+.row{
+	margin-bottom: 6%;
+}
+
+footer{
+	background-color: #d9e4ea;
+	padding:5%;
+	display: flex;
+}
+
+footer div{
+	margin: 0% auto;
+	font-size: 1.375rem;
+	color: #3a3a3a;
+}
+
+@media screen and (min-width: 768px){ /*tablet*/
+	nav{
+		display:flex;
+	}
+	
+	nav ul{
+		display: flex;
+		justify-content: space-around;
+		width: 66.6%;
+		margin: 0% auto;
+	}
+
+	.hero{
+		margin-bottom: 6%;
+	}
+	
+	.row{
+		display: flex;
+		padding: 0% 2%;
+	}
+
+	.col{
+		flex:1;
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 2%;
+	}
+
+	.col a{
+		margin-top: auto;
+		padding: 5%;
+	}
+
+	.col p+p+p{
+		margin-bottom: 5%;
+	}
+
+	.col h3{
+		padding: 6% 6% 10% 6%;
+	}
+
+	.col p{
+		padding: 0% 6% 2% 6%;
+	}
+}
+
+@media screen and (min-width: 1024px){ /*tablet*/
+	header{
+		flex-direction: row;
+		align-items: center;
+	}
+
+	header h1{
+		flex: 1;
+	}
+
+	header nav{
+		flex:2;
+	}
+
+	nav li{
+		margin-bottom: 0%;
+	}
+
+	.hero{
+		padding: 5% 0%;
+		margin-bottom: 4%;
+	}
+
+	.hero h2{
+		margin: 3% 0% 2%;
+	}
+
+	.row{
+		padding: 0% 4%;
+		margin-bottom: 4%;
+	}
+}

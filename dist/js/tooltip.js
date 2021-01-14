@@ -1,48 +1,46 @@
-/*Parameters:
- * -selector: the DOM selector that will get turned into a hoverable tooltip trigger
- * -contenr: the text to be shown in the tooltip on hover
- * 
+/* Parameters:
+ * - selector: the DOM selector that will get turned into a hoverable tooltip trigger
+ * - content: the text to be shown in the tooltip on hover
  */
 
 
  //IIFE vs Class
-const TooltipIIFE = (function(){
+// const TooltipIIFE = (function(){
 
-    var selector
-    var content
+//     var selector
+//     var content
 
-    function init(selector, content) {
-        console.log(`Hi, I am TooltipIIFE.init`, selector, content)
-        this.selector = selector
-        print()
-    }
+//     function init(selector, content) {
+//         console.log(`Hi, I am TooltipIIFE.init`, selector, content)
+//         this.selector = selector
+//         print()
+//     }
 
-    print = () => {
-        console.log(`printing selector`, selector)
-    }
+//     print = () => {
+//         console.log(`printing selector`, selector)
+//     }
 
-    function getSelector() {
-        console.log(`this?`, selector)
-        return this.selector
-    }
+//     function getSelector() {
+//         console.log(`this?`, selector)
+//         return this.selector
+//     }
 
-    return{
-        init: init,
-        getSelector: getSelector
-    }
-}())
+//     return{
+//         init: init,
+//         getSelector: getSelector
+//     }
+// }())
 
 class TooltipClass {
-    constructor(selector, content) {
-        console.log(`hi I am a tooltip class instance`, selector, content)
+    constructor(selector) {
+        console.log(`hi I am a tooltip class instance`, selector)
 
         this.selector = selector
-        this.content = content
 
         this.setup()
     }
 
-    setup() {
+    setup() {    
         console.log(`setting up tooltip elements`)
         const tooltipElements = document.querySelectorAll(this.selector)
         tooltipElements.forEach(function(element) {

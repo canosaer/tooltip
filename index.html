@@ -4,23 +4,59 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>  </title>
+	<title> Best City Tooltips </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="dist/css/main.css">
 
 </head>
 
 <body>
-	<h1>Hello World!</h1>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-		<span class="tooltip" data-tooltip="1st tooltip">Lorem ipsum</span>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-		<span class="tooltip" data-tooltip="another tooltip">dolor sit</span>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-	</p>
+
+	<header>
+		<h1><a href="">Best City Guide</a></h1>
+		<nav>
+			<ul>
+				<li><a href="">Ice Cream</a></li>
+				<li><a href="">Donuts</a></li>
+				<li><a href="">Tea</a></li>
+				<li><a href="">Coffee</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section class="hero">
+		<img src="src/img/city-logo.svg" alt="The Best City">
+		<h2>The Best City</h2>
+		<p>The best <span class="tooltip" data-tooltip="1st tooltip">drinks</span> and <span class="tooltip" data-tooltip="2nd tooltip">eats</span> in the best <span class="tooltip" data-tooltip="3rd tooltip">city</span> ever.</p>
+	</section>
+
+	<section class="row">
+		<div class="col">
+			<h3>Welcome!</h3>
+			<p>Everything in this city is worth waiting in line for. From delicious cupcakes to colorful cakes, gummies, and jelly beans, you won't find better food anywhere else!</p>
+			<a href="">Learn More</a>
+		</div>
+		<div class="col">
+			<h3>Great food</h3>
+			<p>Croissant macaroon pie brownie. Cookie marshmallow liqourice gingerbread caramels toffee chocolate.</p>
+			<p>Wafer lollipop dessert. Bonbon jelly beans pudding dessert sugar plum.</p>
+			<a href="">Learn More</a>
+		</div>
+		<div class="col">
+			<h3>How to get here</h3>
+			<p><span>Plane: </span>Tiramisu caramels gummies chupa chups lollipop muffin. Jujubes chocolate caramels dragee cheesecake brownie lollipop cheesecake.</p>
+			<p><span>Car: </span>Pie apple pie pudding wafer toffee liqourice sesame snaps lemon drops. Lollipop gummi bears dessert muffin fruitcake toffee pie.</p>
+			<p><span>Train: </span>Jelly cotton candy bonbon jelly-o jelly-o. Sugar plum chocolate cake pie pastry liqourice.</p>
+			<a href="">Learn More</a>
+		</div>
+	</section>
+
+	<footer>
+		<div>&copy;2015 Residents of the Best City Ever.</div>
+	</footer>
+
 	<script src="dist/js/tooltip.js"></script>
 	<script src="dist/js/main.js"></script>
 
