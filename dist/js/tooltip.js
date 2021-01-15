@@ -33,19 +33,30 @@
 
 class TooltipClass {
     constructor(selector) {
-        console.log(`hi I am a tooltip class instance`, selector)
-
         this.selector = selector
-
         this.setup()
     }
 
     setup() {    
-        console.log(`setting up tooltip elements`)
         const tooltipElements = document.querySelectorAll(this.selector)
         tooltipElements.forEach(function(element) {
-            const content = element.dataset[`tooltip`]
-            console.log(`adding content`, content, `to element`, element.textContent)
+            let tooltipWidth = (element.getBoundingClientRect().width)*1.5
+            element.style.position = `relative`
+            let tooltipBox = document.createElement(`div`)
+            tooltipBox.style.background = `black`
+            tooltipBox.style.color = `white`
+            tooltipBox.style.position = `absolute`
+            tooltipBox.style.width = `${tooltipWidth}px`
+            tooltipBox.style.lineHeight = `1.4`
+            tooltipBox.style.top = `-50px`
+            tooltipBox.style.left = `-50px`
+            tooltipBox.textContent = element.dataset[`tooltip`]
+            element.addEventListener(`mouseover`, function(){
+                element.appendChild(tooltipBox)
+            })
+            element.addEventListener(`mouseout`, function(){
+                tooltipBox.remove()
+            })
         })
     }
 
