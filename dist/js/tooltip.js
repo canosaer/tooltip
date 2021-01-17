@@ -51,10 +51,10 @@ class TooltipClass {
             tooltipBox.style.opacity = `0`
             tooltipBox.style.borderRadius = `10%`
             tooltipBox.style.transition = `opacity 0.5s ease-out`
-            tooltipBox.style.top = `${window.scrollY+element.getBoundingClientRect().top+85}px`
+            tooltipBox.style.top = `${window.scrollY+element.getBoundingClientRect().top-88}px`
             tooltipBox.style.left = `${window.scrollX+element.getBoundingClientRect().left-40}px`
             tooltipBox.textContent = element.dataset[`tooltip`]
-            tooltipBox.classList.add(`slide-in`)
+            // tooltipBox.classList.add(`slide-in`)
             let arrowBox = document.createElement(`div`)
             arrowBox.style.background = `black`
             arrowBox.style.position = `absolute`
@@ -63,9 +63,9 @@ class TooltipClass {
             arrowBox.style.transform = `rotate(45deg)`
             arrowBox.style.opacity = `0`
             arrowBox.style.transition = `opacity 0.5s ease-out`
-            arrowBox.style.top = `${window.scrollY+element.getBoundingClientRect().top+152}px`
+            arrowBox.style.top = `${window.scrollY+element.getBoundingClientRect().top-20}px`
             arrowBox.style.left = `${window.scrollX+element.getBoundingClientRect().left + (element.getBoundingClientRect().width/3)}px`
-            arrowBox.classList.add(`slide-in`)
+            // arrowBox.classList.add(`slide-in`)
             element.addEventListener(`mouseover`, function(){
                 bodyElement.appendChild(tooltipBox)
                 bodyElement.appendChild(arrowBox)
