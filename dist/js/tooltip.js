@@ -33,15 +33,15 @@ class TooltipClass {
 
     setup() {    
         const tooltipElements = document.querySelectorAll(this.selector)
-        const bodyElement = document.querySelector(`body`)
-        bodyElement.style.position = `relative`
         tooltipElements.forEach(function(element) {
+            console.log(element.getBoundingClientRect())
             let tooltipBox = document.createElement(`div`)
+            element.style.position = `relative`
             tooltipBox.style.background = `black`
             tooltipBox.style.color = `white`
             tooltipBox.style.position = `absolute`
-            tooltipBox.style.width = `150px`
-            tooltipBox.style.height = `75px`
+            tooltipBox.style.width = `200px`
+            tooltipBox.style.height = `110px`
             tooltipBox.style.lineHeight = `1.4`
             tooltipBox.style.display = `flex`
             tooltipBox.style.alignItems = `center`
@@ -51,8 +51,17 @@ class TooltipClass {
             tooltipBox.style.opacity = `0`
             tooltipBox.style.borderRadius = `10%`
             tooltipBox.style.transition = `opacity 0.5s ease-out`
-            tooltipBox.style.top = `${window.scrollY+element.getBoundingClientRect().top-88}px`
-            tooltipBox.style.left = `${window.scrollX+element.getBoundingClientRect().left-40}px`
+            tooltipBox.style.top = `-120px`
+            if(element.getBoundingClientRect().left < 60){
+                tooltipBox.style.left = `0px`
+            }
+            else if(element.getBoundingClientRect().right < 60){
+                tooltipBox.style.right = `0px`
+            }
+            else{
+                tooltipBox.style.left = `-60px`
+            }
+            
             tooltipBox.textContent = element.dataset[`tooltip`]
             // tooltipBox.classList.add(`slide-in`)
             let arrowBox = document.createElement(`div`)
@@ -63,12 +72,12 @@ class TooltipClass {
             arrowBox.style.transform = `rotate(45deg)`
             arrowBox.style.opacity = `0`
             arrowBox.style.transition = `opacity 0.5s ease-out`
-            arrowBox.style.top = `${window.scrollY+element.getBoundingClientRect().top-20}px`
-            arrowBox.style.left = `${window.scrollX+element.getBoundingClientRect().left + (element.getBoundingClientRect().width/3)}px`
+            arrowBox.style.top = `-17px`
+            arrowBox.style.left = `${element.getBoundingClientRect().width/3}px`
             // arrowBox.classList.add(`slide-in`)
             element.addEventListener(`mouseover`, function(){
-                bodyElement.appendChild(tooltipBox)
-                bodyElement.appendChild(arrowBox)
+                element.appendChild(tooltipBox)
+                element.appendChild(arrowBox)
                 // gsap.from(`.slide-in`, { duration: 1, ease: `expo`, xPercent: -100 });
                 setTimeout(function(){
                     tooltipBox.style.opacity = `1`
